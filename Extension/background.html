@@ -1,0 +1,21 @@
+<html>
+<head>
+<script>
+function init() {
+	var plugin = document.getElementById("pluginId");
+	chrome.experimental.contextMenu.create({
+		title: "Open with Default",
+		contexts: ["LINK"],
+		enabledContexts: ["LINK"],
+		onclick: function(info, tab) {
+			// FIXME dangerous!
+			plugin.open("open \"" + info.linkUrl + "\"");
+		}
+	});
+}
+</script>
+</head>
+<body onload="init()">
+<embed type="application/x-open-with-default" id="pluginId">
+</body>
+</html>

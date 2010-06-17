@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>at.niw.${PRODUCT_NAME:rfc1034Identifier}</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>BRPL</string>
+	<key>CFBundleVersion</key>
+	<string>0.1.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.0</string>
+	<key>WebPluginMIMETypes</key>
+	<dict>
+		<key>application/x-open-with-default</key>
+		<dict>
+			<key>WebPluginTypeDescription</key>
+			<string>A Plugin for Chrome Extension</string>
+		</dict>
+	</dict>
+	<key>WebPluginName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>WebPluginDescription</key>
+	<string>A Plugin for Chrome Extension</string>
+</dict>
+</plist>

@@ -1,0 +1,8 @@
+.DS_Store
+/build
+/*.xcodeproj/*.perspectivev3
+/*.xcodeproj/*.pbxuser
+/*.xcodeproj/*.mode*
+/OpenWithDefault.crx
+/OpenWithDefault.pem
+/Extension/OpenWithDefault.plugin
