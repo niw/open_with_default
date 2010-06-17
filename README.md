@@ -1,0 +1,36 @@
+Open with Default
+=================
+A tiny extension for Google Chrome on Mac OS X which adds "Open with Default" to context menu of links.
+We can open the link wifh Safari or Firefox from Chrome.
+
+This extension use native code to run external application like Safari or Firefox from Chrome.
+The native code are running as NPAPI plugin like Flash Player in background page.
+See <http://code.google.com/chrome/extensions/trunk/npapi.html> for more details.
+
+This extension might be good example how to implement native plugin for Google Chrome extension on Mac OS X.
+Enjoy!
+
+How to Build and Test
+---------------------
+Open `OpenWithDefault.xcodeproj` with Xcode then build and run.
+Enable developer mode on Extensions page on Chrome, then load unpacked extension from `Extension` folder.
+
+Build .crx File
+---------------
+Select "Packaging" target then build it, you'll get OpenWithDefault.crx in project folder.
+
+Run Chrome with Experimental API
+--------------------------------
+This extension uses experimental API which is disabled as default.
+You need to use Chrome from DevChannel then use `--enable-experimental-extension-apis` api for Chrome command.
+For example, you can run Chrome with experimental api from Terminal.app with next command.
+
+    % open /Applications/Google\ Chrome.app --args --enable-experimental-extension-apis
+
+See also <http://code.google.com/chrome/extensions/trunk/experimental.html>.
+
+From XCode, you can use "Build and Run" for debug this extension on "OpenWithDefault" Target, or just select "Google Chrome" Target and build it. You can run Chrome with experimental api.
+
+Security Risk
+-------------
+This code didn't consider any security risk so far. Actually, current implementation is really dengoures, you may have a change like removing local files from this extension. Use this AT YOUR OWN RISK, WE MAKE NO WARRANTY.
