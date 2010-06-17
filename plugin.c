@@ -27,7 +27,7 @@ bool plugin_invoke(NPObject *obj, NPIdentifier methodName, const NPVariant *args
 			npnfuncs->setexception(obj, "The first argument must be String.");
 			return false;
 		}
-		// FIXME dengrous!
+		// FIXME dangerous!
 		system(NPVARIANT_TO_STRING(args[0]).UTF8Characters);
 		//printf("%s", NPVARIANT_TO_STRING(args[0]).UTF8Characters);
 		return true;
