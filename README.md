@@ -31,6 +31,11 @@ See also <http://code.google.com/chrome/extensions/trunk/experimental.html>.
 
 From XCode, you can use "Build and Run" for debug this extension on "OpenWithDefault" Target, or just select "Google Chrome" Target and build it. You can run Chrome with experimental api.
 
+Open URL with Default Application
+---------------------------------
+Use Launch Service to open URL with the default application which user select for opening URL.
+See [Launch Service Reference](http://developer.apple.com/mac/library/documentation/Carbon/Reference/LaunchServicesReference/Reference/reference.html).
+
 Security Risk
 -------------
-This code didn't consider any security risk so far. Actually, current implementation is really dengoures, you may have a change like removing local files from this extension. Use this AT YOUR OWN RISK, WE MAKE NO WARRANTY.
+Use this extension AT YOUR OWN RISK, WE MAKE NO WARRANTY.
