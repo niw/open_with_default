@@ -1,6 +1,6 @@
-#include <stdlib.h>
 #include <npapi.h>
 #include <npfunctions.h>
+#include <CoreFoundation/CoreFoundation.h>
 
 static NPNetscapeFuncs* npnfuncs;
 
@@ -27,9 +27,13 @@ bool plugin_invoke(NPObject *obj, NPIdentifier methodName, const NPVariant *args
 			npnfuncs->setexception(obj, "The first argument must be String.");
 			return false;
 		}
-		// FIXME dangerous!
-		system(NPVARIANT_TO_STRING(args[0]).UTF8Characters);
-		//printf("%s", NPVARIANT_TO_STRING(args[0]).UTF8Characters);
+
+		CFURLRef url = CFURLCreateWithBytes(NULL, (const UInt8 *)NPVARIANT_TO_STRING(args[0]).UTF8Characters, NPVARIANT_TO_STRING(args[0]).UTF8Length, kCFStringEncodingUTF8, NULL);
+		if(url) {
+			LSOpenCFURLRef(url, NULL);
+		}
+		CFRelease(url);
+
 		return true;
 	}
 	npnfuncs->memfree(name);

@@ -8,8 +8,7 @@ function init() {
 		contexts: ["LINK"],
 		enabledContexts: ["LINK"],
 		onclick: function(info, tab) {
-			// FIXME dangerous!
-			plugin.open("open \"" + info.linkUrl + "\"");
+			plugin.open(info.linkUrl);
 		}
 	});
 }
