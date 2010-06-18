@@ -19,21 +19,16 @@ bool plugin_invoke(NPObject *obj, NPIdentifier methodName, const NPVariant *args
 	NPUTF8 *name = npnfuncs->utf8fromidentifier(methodName);
 	if(strcmp(name, plugin_method_name_open) == 0) {
 		npnfuncs->memfree(name);
-		if(argCount < 1) {
-			npnfuncs->setexception(obj, "At least one argument is required.");
-			return false;
+		BOOLEAN_TO_NPVARIANT(false, *result);
+		if(argCount > 0 && NPVARIANT_IS_STRING(args[0])) {
+			NPString str = NPVARIANT_TO_STRING(args[0]);
+			CFURLRef url = CFURLCreateWithBytes(NULL, (const UInt8 *)str.UTF8Characters, str.UTF8Length, kCFStringEncodingUTF8, NULL);
+			if(url) {
+				OSStatus res = LSOpenCFURLRef(url, NULL);
+				CFRelease(url);
+				BOOLEAN_TO_NPVARIANT(res == noErr, *result);
+			}
 		}
-		if(! NPVARIANT_IS_STRING(args[0])) {
-			npnfuncs->setexception(obj, "The first argument must be String.");
-			return false;
-		}
-
-		CFURLRef url = CFURLCreateWithBytes(NULL, (const UInt8 *)NPVARIANT_TO_STRING(args[0]).UTF8Characters, NPVARIANT_TO_STRING(args[0]).UTF8Length, kCFStringEncodingUTF8, NULL);
-		if(url) {
-			LSOpenCFURLRef(url, NULL);
-		}
-		CFRelease(url);
-
 		return true;
 	}
 	npnfuncs->memfree(name);
