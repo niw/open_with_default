@@ -12,7 +12,7 @@ Enjoy!
 
 How to Build and Test
 ---------------------
-Open `OpenWithDefault.xcodeproj` with Xcode then build and run.
+Open `OpenWithDefault.xcodeproj` with Xcode then build.
 Enable developer mode on Extensions page on Chrome, then load unpacked extension from `Extension` folder.
 
 Build .crx File
@@ -29,7 +29,7 @@ For example, you can run Chrome with experimental api from Terminal.app with nex
 
 See also <http://code.google.com/chrome/extensions/trunk/experimental.html>.
 
-From XCode, you can use "Build and Run" for debug this extension on "OpenWithDefault" Target, or just select "Google Chrome" Target and build it. You can run Chrome with experimental api.
+On XCode, add Google Chrome as a custom executable with `--enable-experimental-extension-apis` argument then use "Build and Run" for debug this extension on "OpenWithDefault" Target, or just select "Google Chrome" Target and build it. You can run Chrome with experimental api.
 
 Open URL with Default Application
 ---------------------------------
