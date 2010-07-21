@@ -3,10 +3,9 @@
 <script>
 function init() {
 	var plugin = document.getElementById("pluginId");
-	chrome.experimental.contextMenu.create({
+	chrome.experimental.contextMenus.create({
 		title: "Open with Default",
-		contexts: ["LINK"],
-		enabledContexts: ["LINK"],
+		contexts: ["link"],
 		onclick: function(info, tab) {
 			plugin.open(info.linkUrl);
 		}
