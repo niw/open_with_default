@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"description": "Add item to the context menu of links to open the link with default application.",
 	"permissions": [
-		"experimental"
+		"contextMenus"
 	],
 	"background_page": "background.html",
 	"plugins": [

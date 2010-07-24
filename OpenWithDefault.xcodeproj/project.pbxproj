@@ -230,7 +230,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "open /Applications/Google\\ Chrome.app --args --enable-experimental-extension-apis";
+			shellScript = "open /Applications/Google\\ Chrome.app";
 		};
 /* End PBXShellScriptBuildPhase section */
 
